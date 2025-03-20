@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+    int len = strlen(str);
+    if (len >= 1 && str[0] == '0' && str[len - 1] == '1') {
+        printf("Accepted\n");
+    } else {
+        printf("Rejected\n");
+    }
+    return 0;
+}
+
+
+Sample Input/Output:
+
+Input: 0101
+Output: Accepted
+
+Input: 1010
+Output: Rejected
