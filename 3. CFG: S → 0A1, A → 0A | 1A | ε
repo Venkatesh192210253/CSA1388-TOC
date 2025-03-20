@@ -1,0 +1,35 @@
+3. CFG: S → 0A1, A → 0A | 1A | ε
+
+#include <stdio.h>
+#include <string.h>
+
+int check(char str[], int i, int len) {
+    if (str[i] != '0') return 0;
+    i++;
+    while (i < len - 1) {
+        if (str[i] != '0' && str[i] != '1') return 0;
+        i++;
+    }
+    if (str[len - 1] != '1') return 0;
+    return 1;
+}
+
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+    int len = strlen(str);
+    if (len >= 2 && check(str, 0, len)) {
+        printf("Accepted\n");
+    } else {
+        printf("Rejected\n");
+    }
+    return 0;
+}
+Sample Input/Output:
+
+Input: 0111
+Output: Accepted
+
+Input: 010
+Output: Rejected
